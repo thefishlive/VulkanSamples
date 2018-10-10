@@ -38,7 +38,7 @@ else()
     message(FATAL_ERROR "Unsupported Platform!")
 endif()
 
-set(SAMPLES_DATA_DIR ${SAMPLES_DATA_DIR} "${CMAKE_SOURCE_DIR}/API-Samples/data")
+set(SAMPLES_DATA_DIR ${SAMPLES_DATA_DIR} "${CMAKE_CURRENT_SOURCE_DIR}/data")
 set(SHADER_FILES ${SHADER_FILES} "")
 include_directories( ${SAMPLES_DATA_DIR} ${GLSLANG_SPIRV_INCLUDE_DIR} ${GLMINC_PREFIX} ${Vulkan_INCLUDE_DIR})
 
