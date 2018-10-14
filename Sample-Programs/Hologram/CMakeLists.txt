@@ -98,4 +98,8 @@ target_compile_definitions(Hologram ${definitions})
 target_include_directories(Hologram ${includes})
 target_link_libraries(Hologram ${libraries})
 
+option(INSTALL_SAMPLE_PROGRAMS ON)
+
+if (INSTALL_SAMPLE_PROGRAMS)
 install(TARGETS Hologram RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR})
+endif()

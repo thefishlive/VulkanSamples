@@ -270,7 +270,9 @@ set (S_TARGETS
     spirv_assembly spirv_specialization memory_barriers validation_cache vulkan_1_1_flexible)
 sampleWithSingleFile()
 
-if (NOT ANDROID)
+option(INSTALL_API_SAMPLES ON)
+
+if (INSTALL_API_SAMPLES AND NOT ANDROID)
 foreach (sample ${S_TARGETS})
     install(TARGETS ${sample} RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR})
 endforeach(sample)
