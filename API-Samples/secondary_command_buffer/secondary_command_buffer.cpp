@@ -142,6 +142,8 @@ int sample_main(int argc, char *argv[]) {
     writes[0].descriptorType = VK_DESCRIPTOR_TYPE_UNIFORM_BUFFER;
     writes[0].pBufferInfo = &info.uniform_data.buffer_info;
     writes[0].dstArrayElement = 0;
+    writes[0].pImageInfo = NULL;
+    writes[0].pTexelBufferView = NULL;
     writes[0].dstBinding = 0;
 
     writes[1].sType = VK_STRUCTURE_TYPE_WRITE_DESCRIPTOR_SET;
@@ -151,6 +153,8 @@ int sample_main(int argc, char *argv[]) {
     writes[1].descriptorCount = 1;
     writes[1].descriptorType = VK_DESCRIPTOR_TYPE_COMBINED_IMAGE_SAMPLER;
     writes[1].pImageInfo = &greenTex;
+    writes[1].pBufferInfo = NULL;
+    writes[1].pTexelBufferView = NULL;
     writes[1].dstArrayElement = 0;
 
     vkUpdateDescriptorSets(info.device, 2, writes, 0, NULL);
